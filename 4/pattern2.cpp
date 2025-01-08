@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     int n;
     int i{1};
-    int count{1};
+    
     
     cout<<"enter the value of n: ";
     cin>>n;
@@ -12,7 +12,8 @@ int main(){
     while (i<=n)
     {
         int j{1};
-
+        int count{1};
+        
         while (j<=n)
         {
             cout<<count<<" ";

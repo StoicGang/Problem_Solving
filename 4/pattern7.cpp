@@ -25,31 +25,33 @@ int main(){
 
 //without using the variable value
 
-    while (row<=n)
-    {
-        int col{1};
-        while (col<=row)
-        {
-            cout<<row-col+1<<" ";
-            col =col +1;
-        }
-        cout<<endl;
-        row= row +1;
-    }
+    // while (row<=n)
+    // {
+    //     int col{1};
+    //     while (col<=row)
+    //     {
+    //         cout<<row-col+1<<" ";
+    //         col =col +1;
+    //     }
+    //     cout<<endl;
+    //     row= row +1;
+    // }
 
 //Reverse Pattern
-/*
+
  while (row<=n)
     {
         int col{1};
-        while (col<=row)
+        int start = n -row +1;
+        while (start <=n)
         {
-            cout<<n-col+1<<" ";
-            col =col +1;
+            
+            cout<<start<<" ";
+            start++;
         }
         cout<<endl;
         row= row +1;
     }
-*/    
+  
     return 0;
 }

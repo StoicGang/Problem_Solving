@@ -3,36 +3,37 @@ using namespace std;
 
 int main(){
     int n;
-    int i{1};
+    int row{1};
     
     cout<<"enter the value of n: ";
     cin>>n;
-/*
-    while (i<=n)
-    {
-        int j{1};
+//Normal Printing
+    // while (i<=n)
+    // {
+    //     int j{1};
 
-        while (j<=i)
-        {
-            cout<<"*";
-            j=j+1;
-        }
-        cout<<endl;
-        i=i+1;
-    }
-*/    
+    //     while (j<=i)
+    //     {
+    //         cout<<"*"<<" ";
+    //         j=j+1;
+    //     }
+    //     cout<<endl;
+    //     i=i+1;
+    // }
+    
 //reverse printing
-    while (i<=n)
+    while (row<=n)
     {
         int j{1};
 
-        while (j<=i)
+        int start =n -row+1;
+        while (start)
         {
             cout<<"*"<<" ";
-            j=j+1;
+            start = start -1;
         }
         cout<<endl;
-        i=i+1;
+        row=row+1;
     }
     return 0;
 }
