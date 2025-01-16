@@ -1,9 +1,9 @@
-int INT_MAX;
-int INT_MIN;
+#include<iostream>
+#include <limits.h>
 
-class Solution {
-public:
-    int reverse(int x) {
+using namespace std;
+
+int reverse(int x) {
            int result = 0;
     while (x != 0) {
         int digit = x % 10;
@@ -18,6 +18,13 @@ public:
 
         result = result * 10 + digit;
     }
+    cout<<result;
     return result;
-    }
-};
+}
+
+int main (){
+    int n{0};
+    cin>>n;
+    reverse(n);
+    return 0;
+}

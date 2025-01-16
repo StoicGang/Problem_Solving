@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 
-    int main() {
+int main() 
+    {
         int num;
         cin>>num;
         unsigned int bitmask{0};
@@ -16,4 +17,4 @@ using namespace std;
         int complement = num ^ bitmask;
         cout<< complement;
         return 0; 
-    }
+}
