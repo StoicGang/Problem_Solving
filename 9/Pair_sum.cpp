@@ -4,17 +4,16 @@ using namespace std;
 
 void alternate_sum(int arr[], int n){
     cout<<"Sum of alternate elements in array : [ ";
-    for (int i = 0; i<n; i++){
-
+    for (int i = 0; i<n-1; i++){
         int j = i+1;
         int sum{0};
         if(j<n){
             sum = arr[i] + arr[j];
         }
-        else if (j=n)
-        {
-            sum = arr[0] + arr[i];
-        }
+        // else if (j=n)
+        // {
+        //     sum = arr[0] + arr[i];
+        // }
         
         cout<<sum <<" ";
     }

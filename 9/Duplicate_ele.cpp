@@ -22,6 +22,17 @@ void duplicate_finder(int arr[], int n){
     cout << endl;
 }
 
+int duplicate(int arr[], int size){
+    int duplicate{0};
+    for(int i=0; i<size; i++){
+        duplicate = duplicate ^arr[i];
+    }
+    for(int i=1; i<size; i++){
+        duplicate = duplicate ^i;
+    }
+    return duplicate;
+}
+
 void input(int array[], int n){
     for(int i=0; i<n; i++){
         cin>>array[i];
@@ -44,6 +55,9 @@ int main(){
     input(arr, size);
 
     duplicate_finder(arr, size);
+
+    // int result = duplicate(arr, size);
+    // cout<<result;
 
     return 0;
 }

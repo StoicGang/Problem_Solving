@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 void swap_arr(int arr[], int n){
     int start{0};
     int end{n-1};
@@ -13,6 +12,19 @@ void swap_arr(int arr[], int n){
         end--;
     }
     
+}
+
+void arr_swap(int arr[], int n) {
+    int temp;
+    int start = 0;
+    int end = n - 1;
+    while (start < end) {
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
 }
 
 void input(int array[], int n){
@@ -42,7 +54,8 @@ int main (){
     printArray(arr,size);
 
     cout<<"Reversed Array is : ";
-    swap_arr(arr, size);
+    //swap_arr(arr, size);
+    arr_swap(arr, size);
     printArray(arr,size);
     return 0;
 }
