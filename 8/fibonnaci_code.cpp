@@ -10,7 +10,7 @@ int fibonacci_number(int n){
     if (n == 1) return b;
     int nextNumber{0};
 
-    for (int i{3}; i<=n; i++){
+    for (int i{2}; i<=n; i++){
         nextNumber = a+b;
         a=b;
         b=nextNumber;
