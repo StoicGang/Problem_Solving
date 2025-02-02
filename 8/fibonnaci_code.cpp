@@ -8,9 +8,13 @@ int fibonacci_number(int n)
     int a{0};
     int b{1};
     if (n == 0)
-        return a; // we explicitly added this statement so that the fibonacci series should start from the beginning
+    {
+        return a;
+    } // we explicitly added this statement so that the fibonacci series should start from the beginning
     if (n == 1)
+    {
         return b;
+    }
     int nextNumber{0};
 
     for (int i{2}; i <= n; i++)
