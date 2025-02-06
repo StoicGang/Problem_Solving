@@ -2,16 +2,17 @@
 #include <iostream>
 using namespace std;
 
-void Intersection(int arr1[], int arr2[])
+void Intersection(int arr1[], int arr2[], int size1, int size2)
 {
     cout << "Intersection of two arrays is : [ ";
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < size1; i++)
     {
-        for (int j = 0; j < 7; j++)
+        for (int j = 0; j < size2; j++)
         {
             if (arr1[i] == arr2[j])
             {
                 cout << arr1[i] << " ";
+                arr2[j] = -1;
             }
         }
     }
@@ -56,7 +57,7 @@ int main()
     cout << "Array 2 : ";
     printArray(arr2, size2);
 
-    Intersection(arr1, arr2);
+    Intersection(arr1, arr2, size1, size2);
 
     return 0;
 }
