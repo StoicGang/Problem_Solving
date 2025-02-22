@@ -1,5 +1,15 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
 
 int main()
 {
@@ -14,5 +24,12 @@ int main()
     cout << "1st index : " << arrq[1] << endl;
     cout << "4th index : " << arrq[4] << endl;
     cout << "Size of arr : " << sizeof(arrq) / sizeof(char) << endl;
+
+    int arr2[5]{4, 2, 5, 3, 6};
+    cout << "Before Sorting ";
+    printArray(arr2, 5);
+    sort(arr2, arr2 + 5);
+    cout << "After Sorting ";
+    printArray(arr2, 5);
     return 0;
 }

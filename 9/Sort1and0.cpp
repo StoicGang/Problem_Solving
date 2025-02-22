@@ -1,4 +1,6 @@
 #include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 void sorting(int arr[], int size)
@@ -46,11 +48,12 @@ int main()
     int size{0};
     cout << "Size: ";
     cin >> size;
-    cout << "Elements : ";
+    cout << "Elements(Only 0 and 1) : ";
     input(arr, size);
     cout << "Array Elements are : ";
     printArray(arr, size);
     sorting(arr, size);
+    // sort(arr, arr + size);
     cout << "Sorted Array is : ";
     printArray(arr, size);
 }
