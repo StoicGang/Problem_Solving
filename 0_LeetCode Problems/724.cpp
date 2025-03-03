@@ -1,10 +1,6 @@
 /*
 Find Pivot Index
-Solved
-Easy
-Topics
-Companies
-Hint
+
 Given an array of integers nums, calculate the pivot index of this array.
 
 The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
@@ -13,7 +9,7 @@ If the index is on the left edge of the array, then the left sum is 0 because th
 
 Return the leftmost pivot index. If no such index exists, return -1.
 
- 
+
 
 Example 1:
 
@@ -39,35 +35,43 @@ Left sum = 0 (no elements to the left of index 0)
 Right sum = nums[1] + nums[2] = 1 + -1 = 0
 */
 
-//Bruteforce
+// Bruteforce
 
-int findpivot(int arr[], int n){
-    for(int i=0; i<n-1;i++){
-        int leftsum=0, rightsum=0;
-        for(int j=0; j<i; j++){
+int findpivot(int arr[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int leftsum = 0, rightsum = 0;
+        for (int j = 0; j < i; j++)
+        {
             leftsum += arr[j];
         }
-        for(int j=i+1; j<n; j++){
-            rightsum +=arr[j];
+        for (int j = i + 1; j < n; j++)
+        {
+            rightsum += arr[j];
         }
-        if(leftsum ==rightsum){
+        if (leftsum == rightsum)
+        {
             return i;
         }
     }
     return -1;
 }
 
-int findpivot(int arr[], int n){
-    int start=0;
-    int end = n-1;
-    int rightsum=0, leftsum=0;
+int findpivot(int arr[], int n)
+{
+    int start = 0;
+    int end = n - 1;
+    int rightsum = 0, leftsum = 0;
     for (int i = 0; i < n; i++)
     {
         rightsum = rightsum + arr[i];
     }
-    for(int i=0; i<n; i++){
+    for (int i = 0; i < n; i++)
+    {
         rightsum -= arr[i];
-        if(rightsum == leftsum){
+        if (rightsum == leftsum)
+        {
             return i;
         }
         leftsum += arr[i];

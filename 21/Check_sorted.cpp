@@ -7,7 +7,7 @@ bool check(vector<int> &nums)
     int count = 0;
     for (int i = 1; i < nums.size(); i++)
     {
-        if (nums[i - 1] = nums[i])
+        if (nums[i - 1] > nums[i])
         {
             count++;
         }
@@ -32,8 +32,7 @@ void printVector(vector<int> &nums)
 int main()
 {
     vector<int> nums;
-    nums.push_back(11);
-    nums.push_back(7);
+    nums.push_back(1);
     nums.push_back(2);
     nums.push_back(3);
     nums.push_back(8);

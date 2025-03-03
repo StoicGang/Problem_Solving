@@ -37,5 +37,7 @@ int main()
     cout << "Length is : " << length << endl;
     reverseString(name, length);
     cout << "Reverse name is : " << name;
+    string s = "rals";
+    s.pop_back();
     return 0;
 }
