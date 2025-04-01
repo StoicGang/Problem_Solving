@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Ganes/OneDrive/Documents/codes/Data Structure and Algorithm/Using C++/21/folder",
-      "program": "c:/Users/Ganes/OneDrive/Documents/codes/Data Structure and Algorithm/Using C++/21/folder/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
