@@ -24,6 +24,7 @@ Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 */
 
+// 1
 int fib(int n)
 {
     int a = 0, b = 1, NextNum = 0;
@@ -42,4 +43,18 @@ int fib(int n)
         b = NextNum;
     }
     return NextNum;
+}
+
+// 2
+int fib(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    else if (n == 1)
+    {
+        return 1;
+    }
+    return fib(n - 1) + fib(n - 2);
 }
