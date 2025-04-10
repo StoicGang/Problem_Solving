@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/Ganes/OneDrive/Documents/codes/Data Structure and Algorithm/Using C++/12/Pivot",
+      "program": "c:/Users/Ganes/OneDrive/Documents/codes/Data Structure and Algorithm/Using C++/12/Pivot/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

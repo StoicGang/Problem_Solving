@@ -1,3 +1,6 @@
+// Binary search is like quickly flipping through a sorted book
+// to find a word by halving the pages until you pinpoint it.
+
 #include <iostream>
 using namespace std;
 
@@ -46,6 +49,25 @@ int inputs(int arr[], int n)
     }
 }
 
+int RBinary(int arr[], int start, int end, int key)
+{
+    if (start > end)
+    {
+        return -1;
+    }
+    int mid = start + (end - start) / 2;
+    if (arr[mid] == key)
+    {
+        return mid;
+    }
+    if (arr[mid] > key)
+    {
+        RBinary(arr, start, mid - 1, key);
+    }
+
+    return RBinary(arr, mid + 1, end, key);
+}
+
 int main()
 {
     int arr[200]{};
@@ -60,6 +82,7 @@ int main()
 
     cout << "Enter the element you want to search : ";
     cin >> key;
-    cout << binary_search(arr, size, key);
+    // cout << binary_search(arr, size, key);
+    cout << "Element is present at : " << RBinary(arr, 0, size - 1, key);
     return 0;
 }
