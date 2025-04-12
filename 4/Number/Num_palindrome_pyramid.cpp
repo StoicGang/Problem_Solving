@@ -10,11 +10,11 @@ int main()
     {
         for (int col = 0; col < row + 1; col++)
         {
-            cout << col + 1;
+            cout << col + 1 << " ";
         }
         for (int col = row; col > 0; col--)
         {
-            cout << col;
+            cout << col << " ";
         }
         cout << endl;
     }

@@ -22,7 +22,7 @@ int main()
         cout << endl;
     }
     // second half
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
         // spaces print kr bhai
         for (int j = 0; j < i; j++)
