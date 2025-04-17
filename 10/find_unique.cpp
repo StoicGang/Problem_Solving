@@ -1,6 +1,7 @@
 // write a code to find the unique element of array or elements of an array
 
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int findUnique(int arr[], int size)
@@ -68,6 +69,6 @@ int main()
     cout << "]" << endl;
     int unique = findUnique(arr, size);
     cout << "Unique element is : " << unique << endl;
-    // findUnique_elements(arr, size);
+    //  findUnique_elements(arr, size);
     return 0;
 }

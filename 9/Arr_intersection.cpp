@@ -1,5 +1,7 @@
 // write a code to find the intersection of two arrays
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 void Intersection(int arr1[], int arr2[], int size1, int size2)
