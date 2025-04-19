@@ -1,28 +1,48 @@
 /*
 17. Letter Combinations of a Phone Number
-Given a string containing digits from 2-9 inclusive, return all possible letter combinations
-that the number could represent. Return the answer in any order.
-A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does
-not map to any letters.
 
-Example 1:
-Input: digits = "23"
-Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+Problem:
+    Given a string of digits from 2-9, generate all possible letter combinations that the number
+    could represent on a phone keypad, similar to old phone buttons where each number maps to
+    multiple letters.
 
-Example 2:
-Input: digits = ""
-Output: []
+Input:
+    - digits: string containing digits from 2-9
+    - digits can be empty
+    - 0 <= digits.length <= 4
 
-Example 3:
-Input: digits = "2"
-Output: ["a","b","c"]
+Output:
+    - Vector of strings containing all possible letter combinations
+    - Empty vector if input string is empty
 
+Example:
+    Input: "23"
+    Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 
-Constraints:
+    Input: ""
+    Output: []
 
-0 <= digits.length <= 4
-digits[i] is a digit in the range ['2', '9'].
+    Input: "2"
+    Output: ["a","b","c"]
+
+Approach:
+    1. Create a mapping of digits to their corresponding letters
+    2. Use recursive backtracking to generate all combinations:
+        - For each digit, try all possible letters it maps to
+        - Add each letter to current combination
+        - Recursively process remaining digits
+        - Backtrack by removing last added letter
+    3. Base case: when all digits are processed, add current combination to result
+
+Time Complexity: O(4^n), where n is the length of input string
+    - Each digit can map to 3-4 letters
+    - We try all possibilities for each digit position
+
+Space Complexity: O(n), where n is the length of input string
+    - Recursive call stack depth equals input length
+    - Not counting space needed for output array
 */
+
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -65,7 +65,6 @@ int main()
     row_wise_sum(arr, 3, 3);
     cout << "\nCol wise sum is : ";
     col_wise_sum(arr, 3, 3);
-    cout
-        << largestRowSum(arr, 3, 3);
+    cout << largestRowSum(arr, 3, 3);
     return 0;
 }

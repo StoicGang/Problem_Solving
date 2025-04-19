@@ -1,6 +1,28 @@
+/*
+Problem: Favorite Singer (HackerEarth)
+- Given a list of songs where each number represents a singer's ID
+- Find number of favorite singers where favorite singers are those who appear maximum times in the list
+- If multiple singers appear maximum times, all of them are considered favorites
+
+Approach:
+1. Sort the array to group same singer IDs together
+2. Iterate through array while keeping track of:
+    - Current count of consecutive same IDs (localcount)
+    - Maximum count seen so far (maxcount)
+    - Number of singers with maximum count (ans)
+3. For each group of same IDs:
+    - If localcount equals maxcount, increment number of favorite singers
+    - If localcount is greater than maxcount, reset favorite singers count to 1
+4. Return the total number of favorite singers
+
+Time Complexity: O(nlogn) for sorting
+Space Complexity: O(1) additional space
+*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <limits.h>
 using namespace std;
 
 void input(vector<int> &ans)
@@ -20,47 +42,38 @@ void print(vector<int> &ans)
     cout << "\n";
 }
 
-int favSong(vector<int> &vec)
+int FavSingers(vector<int> &vec)
 {
-    if (vec.size() == 0)
-    {
-        return -1;
-    }
+    if (vec.empty())
+        return 0;
     if (vec.size() == 1)
-    {
-        return vec[0];
-    }
-    int maxcount = 0;
-    int maxelement = vec[0];
-    int index = 0;
-    int n = vec.size();
+        return 1;
+
     sort(vec.begin(), vec.end());
-    while (index < n)
+    int ans = 0;
+    int maxcount = 0;
+    size_t outerindex = 0;
+    while (outerindex < vec.size())
     {
-        int innerIndex = index + 1;
-        int count = 1;
-        while (vec[index] == vec[innerIndex])
+        int localcount = 1;
+        size_t innerindex = outerindex + 1;
+        while (innerindex < vec.size() && vec[innerindex] == vec[outerindex])
         {
-            vec[innerIndex] = -1;
-            count++;
-            innerIndex++;
-            if (innerIndex == n)
-            {
-                break;
-            }
+            localcount++;
+            innerindex++;
         }
-        if (count > maxcount)
+        if (maxcount == localcount)
         {
-            maxcount = count;
-            maxelement = vec[index];
+            ans++;
         }
-        if (count == maxcount)
+        else if (localcount > maxcount)
         {
-            maxelement = max(maxelement, vec[index]);
+            ans = 1;
+            maxcount = localcount;
         }
-        index = innerIndex;
+        outerindex = innerindex;
     }
-    return maxelement;
+    return ans;
 }
 
 int main()
@@ -69,6 +82,6 @@ int main()
     cin >> N;
     vector<int> songs(N);
     input(songs);
-    cout << favSong(songs) << "\n";
+    cout << FavSingers(songs) << "\n";
     return 0;
 }

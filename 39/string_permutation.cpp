@@ -1,3 +1,24 @@
+/*
+Problem: Generate all possible permutations of a given string
+Input: String 'S' which may contain duplicate characters
+Output: Vector of all possible permutations
+Note: Order of permutations in output doesn't matter
+
+Functions:
+printVectorOfVectors:
+    - Prints all vectors in a vector of vectors
+    - Example: if input is {{1,2}, {3,4}}, output will be:
+      1 2
+      3 4
+
+solve:
+    - Recursively generates all permutations
+    - Parameters:
+        str: current vector being permuted
+        index: current position being processed
+        ans: stores all permutations found so far
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

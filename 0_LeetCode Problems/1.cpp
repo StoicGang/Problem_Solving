@@ -1,30 +1,29 @@
-/*Two Sum
+/**
+ Problem: Two Sum - Find indices of two numbers in array that add up to target
 
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-You can return the answer in any order.
+ Input:
+ - nums: Vector of integers
+ - target: Target sum to find
 
-Example 1:
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+ Output:
+ - Vector containing two indices whose elements sum to target
 
-Example 2:
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
+ Constraints:
+ - 2 <= nums.length <= 10^4
+ - -10^9 <= nums[i] <= 10^9
+ - -10^9 <= target <= 10^9
+ - Exactly one valid solution exists
+ - Same element cannot be used twice
 
-Example 3:
-Input: nums = [3,3], target = 6
-Output: [0,1]
+Approach:
+ - Use nested loops to check all possible pairs
+ - For each element i, check with all elements j after it
+ - If nums[i] + nums[j] equals target, return their indices
 
-
-Constraints:
-
-2 <= nums.length <= 104
--109 <= nums[i] <= 109
--109 <= target <= 109
-Only one valid answer exists.
-*/
+Complexity:
+ - Time: O(n^2) where n is array length
+ - Space: O(1) constant space
+ */
 
 // brute force approach
 #include <vector>
@@ -49,5 +48,3 @@ public:
         return temp;
     }
 };
-
-// two pointer approach

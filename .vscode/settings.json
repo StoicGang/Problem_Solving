@@ -125,6 +125,6 @@
     "shared_mutex": "cpp",
     "thread": "cpp",
     "typeindex": "cpp"
-},
-"github.copilot.chat.agent.runTasks": false
+  },
+  "github.copilot.chat.agent.runTasks": false
 }
