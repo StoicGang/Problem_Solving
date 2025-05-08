@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void print(int rows, int cols, int arr[][4])
@@ -12,7 +12,6 @@ void print(int rows, int cols, int arr[][4])
         }
         cout << endl;
     }
-    cout << "\n";
 }
 
 void printrow_sum(int rows, int cols, int arr[][4])
@@ -55,7 +54,39 @@ void printkey(int rows, int cols, int arr[][4], int key)
             }
         }
     }
-    cout << "Absent\n";
+    cout << "\nAbsent\n";
+}
+
+int MinEl(int arr[][4], int rows, int cols)
+{
+    int Mini = INT_MAX;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            if (arr[i][j] < Mini)
+            {
+                Mini = arr[i][j];
+            }
+        }
+    }
+    return Mini;
+}
+
+int MaxEl(int arr[][4], int rows, int cols)
+{
+    int maxi = INT_MIN;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            if (arr[i][j] > maxi)
+            {
+                maxi = arr[i][j];
+            }
+        }
+    }
+    return maxi;
 }
 
 int main()
@@ -69,7 +100,9 @@ int main()
     // printrow_sum(rows, cols, arr);
     // printcol_sum(rows, cols, arr);
 
-    printkey(rows, cols, arr, 12);
+    // printkey(rows, cols, arr, 12);
+    cout << "Minimum element : " << MinEl(arr, 3, 4);
+    cout << "\nMaximum Element : " << MaxEl(arr, 3, 4);
 
     return 0;
 }
