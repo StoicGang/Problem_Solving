@@ -1,42 +1,37 @@
 /*
-Problem: Maze Path Finding
-Given a NxN maze matrix, find if there exists a path from source (0,0) to destination (N-1,N-1).
+Title: Maze Path Finding
 
-Constraints:
-- Matrix size N <= 50
-- Cells contain either 0 (blocked) or 1 (path)
-- Source and destination cells are always 1
-- Movement allowed: Down or Right only
+Problem:
+- Find if there exists a path from source (0,0) to destination (N-1,N-1) in a NxN maze matrix
 
-Solution Approach:
-1. Use recursive backtracking to explore all possible paths
-2. For each position (x,y):
-    - Mark current cell as visited
-    - Try moving in all 4 directions (U,D,R,L)
-    - For each valid move:
-      a. Add direction to current path
-      b. Recursively explore next position
-      c. Backtrack by removing last direction
-3. Valid move conditions:
-    - Within matrix bounds
-    - Cell is unvisited
-    - Cell value is 1 (path exists)
-4. Base case: Reached destination (N-1,N-1)
-    - Add current path to solutions
-
-Input format:
-- First line: Number of test cases
+Input:
+- First line: Number of test cases T
 - For each test case:
-  - First line: Size of maze N
-  - Next N lines: N space-separated integers (0/1)
+  * First line: Size of maze N
+  * Next N lines: N space-separated integers (0/1)
+    - 0 represents blocked cell
+    - 1 represents path cell
 
 Output:
 - "POSSIBLE" if path exists
 - "NOT POSSIBLE" if no path exists
 
-Time Complexity:
-- Overall: O(4^(N*N)) - Since at each cell we try 4 directions recursively
-- Space Complexity: O(N*N) for visited array + O(N*N) for recursion stack
+Constraints:
+- Matrix size N <= 50
+- Cells contain either 0 (blocked) or 1 (path)
+- Source (0,0) and destination (N-1,N-1) cells are always 1
+- Movement allowed only in four directions: Up, Down, Right, Left
+
+Approach:
+1. Use recursive backtracking with DFS
+2. For each cell:
+   - Mark as visited
+   - Try all possible directions
+   - Backtrack by unmarking visited cells
+3. Store valid paths when destination is reached
+
+Time Complexity: O(4^(N*N)) - 4 directions possible from each cell
+Space Complexity: O(N*N) for visited array + O(N*N) for recursion stack
 */
 
 #include <iostream>

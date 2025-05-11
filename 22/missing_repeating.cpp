@@ -60,6 +60,25 @@ void input(vector<int> &arr)
 
 pair<int, int> missingAndRepeating(vector<int> &arr, int n)
 {
+    // sum method
+    long long rSum = 0, rSqSum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        rSum += i;
+        rSqSum += (long long)i * i;
+    }
+    long long aSum = 0, aSqSum = 0;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        aSum += arr[i];
+        aSqSum += (long long)arr[i] * arr[i];
+    }
+    long long diff = aSum - rSum;       // repeating - missing
+    long long sqDiff = aSqSum - rSqSum; // repeating^2 - missing^2
+    long long sum = sqDiff / diff;      // repeating + missing
+    int repeating = (sum + diff) / 2;
+    int missing = (sum - diff) / 2;
+    return {missing, repeating};
 }
 
 int main()
@@ -68,5 +87,7 @@ int main()
     cin >> n;
     vector<int> arr(n);
     input(arr);
+    pair<int, int> temp = missingAndRepeating(arr, n);
+    cout << temp.first << " " << temp.second << endl;
     return 0;
 }

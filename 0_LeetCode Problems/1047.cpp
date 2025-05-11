@@ -1,32 +1,47 @@
 /*
-1047. Remove All Adjacent Duplicates In String
+Title: LeetCode 1047 - Remove All Adjacent Duplicates In String
+Problem: Remove all adjacent duplicate characters in a string, repeatedly.
+Two characters are adjacent if they appear consecutively in the string.
 
-You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two
-adjacent and equal letters and removing them.
+Input:
+- String s consisting of lowercase English letters
 
-We repeatedly make duplicate removals on s until we no longer can.
-
-Return the final string after all such duplicate removals have been made. It can be proven that the answer is
-unique.
-
-
-
-Example 1:
-Input: s = "abbaca"
-Output: "ca"
-Explanation:
-For example, in "abbaca" we could remove "bb" since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is "aaca", of which only "aa" is possible, so the final string is "ca".
-
-Example 2:
-Input: s = "azxxzy"
-Output: "ay"
-
+Output:
+- String after removing all adjacent duplicates
 
 Constraints:
+- 1 ≤ s.length ≤ 10^5
+- s consists of lowercase English letters
 
-1 <= s.length <= 105
-s consists of lowercase English letters.
+Approaches:
+1. Stack Approach (Current Implementation):
+   - Use stack to track characters
+   - Pop if current char matches stack top
+   - Otherwise push current char
+   - Time: O(n)
+   - Space: O(n)
+
+2. Two-Pointer Approach (Alternative):
+   - Use string itself as stack
+   - Track top index
+   - Time: O(n)
+   - Space: O(1)
+
+3. String Builder (Alternative):
+   - Build result string
+   - Remove last char if matches current
+   - Time: O(n)
+   - Space: O(n)
+
+Example:
+Input: "abbaca"
+Output: "ca"
+Explanation:
+- Initially: "abbaca"
+- Remove "bb": "aaca"
+- Remove "aa": "ca"
 */
+
 #include <bits/stdc++.h>
 
 class Solution

@@ -1,22 +1,36 @@
 /*
-Problem: Favorite Singer (HackerEarth)
-- Given a list of songs where each number represents a singer's ID
-- Find number of favorite singers where favorite singers are those who appear maximum times in the list
-- If multiple singers appear maximum times, all of them are considered favorites
+Title: Favorite Singer
+Problem:
+    Given a list of songs where each number represents a singer's ID, find the
+    number of favorite singers. Favorite singers are those who appear maximum
+    times in the list. If multiple singers appear maximum times, all are favorites.
 
-Approach:
-1. Sort the array to group same singer IDs together
-2. Iterate through array while keeping track of:
-    - Current count of consecutive same IDs (localcount)
-    - Maximum count seen so far (maxcount)
-    - Number of singers with maximum count (ans)
-3. For each group of same IDs:
-    - If localcount equals maxcount, increment number of favorite singers
-    - If localcount is greater than maxcount, reset favorite singers count to 1
-4. Return the total number of favorite singers
+Input:
+    - Single integer N (number of songs)
+    - N space-separated integers (singer IDs for each song)
 
-Time Complexity: O(nlogn) for sorting
-Space Complexity: O(1) additional space
+Output:
+    - Single integer representing number of favorite singers
+
+Constraints:
+    - 1 ≤ N ≤ 10^5
+    - 1 ≤ singer ID ≤ 10^9
+    - At least one song is always present
+
+Approaches:
+1. Sort and Count (Current Implementation)
+    - Sort array to group same singer IDs together
+    - Count consecutive occurrences of each ID
+    - Track maximum frequency and number of singers with that frequency
+    Time Complexity: O(n log n)
+    Space Complexity: O(1)
+
+2. Hash Map Approach (Alternative)
+    - Store frequency of each singer in hash map
+    - Find maximum frequency
+    - Count singers with maximum frequency
+    Time Complexity: O(n)
+    Space Complexity: O(n)
 */
 
 #include <iostream>

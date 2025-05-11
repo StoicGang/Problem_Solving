@@ -1,3 +1,45 @@
+/*
+Title: Binary Search Implementation
+Problem:
+    Implement binary search to find an element in a sorted array using both
+    iterative and recursive approaches.
+
+Input:
+    - Sorted integer array
+    - Array size
+    - Key element to search for
+
+Output:
+    - Index of the key if found
+    - -1 if key not found
+
+Constraints:
+    - Array must be sorted in ascending order
+    - Valid array indices (0 to size-1)
+    - Array size > 0
+
+Approaches:
+1. Iterative Binary Search:
+    - Initialize start and end pointers
+    - While start <= end:
+        * Calculate mid = start + (end-start)/2
+        * If arr[mid] == key, return mid
+        * If arr[mid] > key, search left half (end = mid-1)
+        * If arr[mid] < key, search right half (start = mid+1)
+    Time: O(log n), Space: O(1)
+
+2. Recursive Binary Search (RBinary):
+    - Base case: start > end, return -1
+    - Calculate mid point
+    - If arr[mid] == key, return mid
+    - Recur on appropriate half
+    Time: O(log n), Space: O(log n) due to recursion stack
+
+Example:
+Input: arr = [1,3,4,6,8,9], key = 6
+Output: 3 (index where 6 is found)
+*/
+
 // Binary search is like quickly flipping through a sorted book
 // to find a word by halving the pages until you pinpoint it.
 

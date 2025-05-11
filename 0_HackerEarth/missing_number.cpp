@@ -1,42 +1,47 @@
 /*
+Title: Find Missing Number
 Problem:
-    Given first n natural numbers with one missing number, find the missing number.
-    For example: If n=10, and numbers are 1,6,4,9,2,3,10,8,7 then missing number is 5.
+    Given an array containing n-1 numbers from 1 to n,
+    find the one missing number in O(n) time and O(1) space.
 
 Input:
-    - First line contains n (total numbers including missing one)
-    - Second line contains (n-1) space separated integers representing numbers from 1 to n with one missing
+    - Array size n-1
+    - Array elements (1 to n with one number missing)
 
 Output:
-    - Single integer representing the missing number
+    - The missing number from 1 to n
 
 Constraints:
-    - 1 <= n <= 10^5
-    - All numbers are distinct
-    - All numbers are in range [1,n]
-    - Exactly one number is missing from the sequence
+    - 1 ≤ n ≤ 10⁵
+    - 1 ≤ Array elements ≤ n
+    - Each number appears exactly once except one missing number
+    - No duplicates in array
 
-Approach:
-    1. Mathematical Sum Method (Used in code)
-       - Calculate sum of first n natural numbers using formula: n*(n+1)/2
-       - Calculate sum of given numbers
-       - Difference gives missing number
-       Time Complexity: O(n)
-       Space Complexity: O(1)
+Approaches:
+1. XOR Method (Current Implementation):
+    - XOR all numbers from 1 to n
+    - XOR all array elements
+    - Final XOR gives missing number
+    Time: O(n)
+    Space: O(1)
 
-    2. Alternative Approach (Not implemented)
-       - XOR all numbers from 1 to n
-       - XOR all given numbers
-       - Result gives missing number
-       Time Complexity: O(n)
-       Space Complexity: O(1)
+2. Sum Method (Alternative):
+    - Calculate expected sum = n*(n+1)/2
+    - Calculate actual array sum
+    - Difference is missing number
+    Time: O(n)
+    Space: O(1)
+    Note: May have integer overflow for large n
 
-    3. Brute Force Approach
-       - Sort the array in ascending order
-       - Iterate through array and check if arr[i] equals i+1
-       - First position where arr[i] != i+1 is the missing number
-       Time Complexity: O(nlogn) due to sorting
-       Space Complexity: O(1)
+3. Sorting Method (Alternative):
+    - Sort array in ascending order
+    - Find first position where arr[i] ≠ i+1
+    Time: O(n log n)
+    Space: O(1)
+
+Example:
+Input: n = 5, arr = [1, 2, 4, 5]
+Output: 3 (missing number)
 */
 
 #include <iostream>
