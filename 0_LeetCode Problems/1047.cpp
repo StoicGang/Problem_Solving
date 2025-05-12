@@ -1,45 +1,40 @@
 /*
-Title: LeetCode 1047 - Remove All Adjacent Duplicates In String
-Problem: Remove all adjacent duplicate characters in a string, repeatedly.
-Two characters are adjacent if they appear consecutively in the string.
+Title: Remove All Adjacent Duplicates In String
+
+Problem:
+- Remove all adjacent duplicate characters in string
+- Keep removing until no adjacent duplicates exist
+- Return final string
 
 Input:
-- String s consisting of lowercase English letters
+- String s containing lowercase English letters
+- Example: "abbaca"
 
 Output:
 - String after removing all adjacent duplicates
+- Example: "ca"
 
 Constraints:
-- 1 ≤ s.length ≤ 10^5
+- 1 <= s.length <= 10^5
 - s consists of lowercase English letters
 
 Approaches:
-1. Stack Approach (Current Implementation):
-   - Use stack to track characters
-   - Pop if current char matches stack top
-   - Otherwise push current char
-   - Time: O(n)
-   - Space: O(n)
+1. Stack Method (Optimal)
+   - Use string/stack to build result
+   - Compare current char with top of stack
+   - Pop if matching, push if different
+   Time: O(n)
+   Space: O(n)
 
-2. Two-Pointer Approach (Alternative):
-   - Use string itself as stack
+2. Two Pointer (Alternative)
+   - Use result string as stack
    - Track top index
-   - Time: O(n)
-   - Space: O(1)
+   - Add/remove chars based on matches
+   Time: O(n)
+   Space: O(n)
 
-3. String Builder (Alternative):
-   - Build result string
-   - Remove last char if matches current
-   - Time: O(n)
-   - Space: O(n)
-
-Example:
-Input: "abbaca"
-Output: "ca"
-Explanation:
-- Initially: "abbaca"
-- Remove "bb": "aaca"
-- Remove "aa": "ca"
+Time Complexity: O(n)
+Space Complexity: O(n)
 */
 
 #include <bits/stdc++.h>

@@ -1,16 +1,35 @@
 /*
-344. Reverse String
+Title: Reverse String
 
-Write a function that reverses a string. The input string is given as an array of characters s.
-You must do this by modifying the input array in-place with O(1) extra memory.
+Problem:
+- Reverse a string in-place
+- Given as array of characters
+- Must modify array in-place with O(1) extra memory
 
-Example 1:
-Input: s = ["h","e","l","l","o"]
-Output: ["o","l","l","e","h"]
+Input:
+- Vector of characters s
+- Example: ["h","e","l","l","o"]
 
-Example 2:
-Input: s = ["H","a","n","n","a","h"]
-Output: ["h","a","n","n","a","H"]
+Output:
+- Same vector with characters reversed
+- Example: ["o","l","l","e","h"]
+
+Constraints:
+- 1 <= s.length <= 10^5
+- s[i] is a printable ascii character
+- Must modify input array in-place
+- Must use only O(1) extra memory
+
+Approach:
+1. Two-pointer technique
+   - Initialize start = 0, end = length-1
+   - While start <= end:
+     * Swap characters at start and end
+     * Increment start, decrement end
+   - Continue until pointers meet
+
+Time Complexity: O(n)
+Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>

@@ -1,31 +1,44 @@
-/*  162. Find Peak Element
+/*
+Title: Find Peak Element
 
-A peak element is an element that is strictly greater than its neighbors.
+Problem:
+- Find a peak element in array
+- Peak element is strictly greater than neighbors
+- Array elements not sorted
+- Any peak element is valid answer
 
-Given a 0-indexed integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+Input:
+- Integer array nums
+- Example: [1,2,3,1] or [1,2,1,3,5,6,4]
 
-You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
-
-You must write an algorithm that runs in O(log n) time.
-
-Example 1:
-
-Input: nums = [1,2,3,1]
-Output: 2
-Explanation: 3 is a peak element and your function should return the index number 2.
-Example 2:
-
-Input: nums = [1,2,1,3,5,6,4]
-Output: 5
-Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
-
+Output:
+- Index of any peak element
+- Example: 2 (for first example) or 5 (for second)
 
 Constraints:
+- 1 <= nums.length <= 1000
+- -2^31 <= nums[i] <= 2^31 - 1
+- nums[i] != nums[i + 1] for all i
+- Must solve in O(log n) time
 
-1 <= nums.length <= 1000
--231 <= nums[i] <= 231 - 1
-nums[i] != nums[i + 1] for all valid i.
+Approaches:
+1. Binary Search (Optimal)
+   - Compare mid with next element
+   - If increasing, peak on right
+   - If decreasing, peak on left
+   Time: O(log n)
+   Space: O(1)
+
+2. Linear Search (Simple)
+   - Check each element with neighbors
+   - Return first peak found
+   Time: O(n)
+   Space: O(1)
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
 */
+
 #include <bits/stdc++.h>
 using namespace std;
 

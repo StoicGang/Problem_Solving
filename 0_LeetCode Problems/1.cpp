@@ -1,37 +1,47 @@
 /*
 Title: Two Sum
-Problem: Given an array of integers nums and an integer target, return indices of the two numbers in nums such that they add up to target.
+
+Problem:
+- Find two numbers in array that add up to target
+- Return indices of these two numbers
+- Exactly one solution exists
 
 Input:
-- nums: Vector of integers (e.g., [2,7,11,15])
-- target: Integer target sum (e.g., 9)
+- Array of integers nums
+- Integer target sum
+- Example: nums = [2,7,11,15], target = 9
 
 Output:
-- Vector of two integers representing indices (e.g., [0,1])
+- Vector of two integers (indices)
+- Example: [0,1] (as 2 + 7 = 9)
 
 Constraints:
 - 2 <= nums.length <= 10^4
 - -10^9 <= nums[i] <= 10^9
 - -10^9 <= target <= 10^9
-- Only one valid answer exists
+- Exactly one valid answer exists
 - Same element cannot be used twice
 
 Approaches:
-1. Brute Force:
-   - Use nested loops to check every pair
-   - Time: O(n²)
-   - Space: O(1)
+1. Hash Map (Optimal)
+   - Store complement in hash map
+   - Check if current number's complement exists
+   Time: O(n)
+   Space: O(n)
 
-2. Hash Map (Optimal):
-   - Store complements in hash map
-   - Single pass through array
-   - Time: O(n)
-   - Space: O(n)
+2. Two Pointers (If sorted)
+   - Sort array (track original indices)
+   - Use two pointers from ends
+   Time: O(n log n)
+   Space: O(n)
 
-Example:
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: nums[0] + nums[1] = 2 + 7 = 9
+3. Brute Force
+   - Check all pairs of numbers
+   Time: O(n^2)
+   Space: O(1)
+
+Time Complexity: O(n)
+Space Complexity: O(n)
 */
 
 // brute force approach

@@ -1,27 +1,44 @@
 /*
-509. Fibonacci Number
+Title: Fibonacci Number
 
-The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence,
-such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
-F(0) = 0, F(1) = 1
-F(n) = F(n - 1) + F(n - 2), for n > 1.
-Given n, calculate F(n).
+Problem:
+- Calculate nth Fibonacci number
+- F(n) = F(n-1) + F(n-2)
+- Base cases: F(0) = 0, F(1) = 1
 
+Input:
+- Integer n (nth Fibonacci number to calculate)
+- Example: n = 4
 
-Example 1:
-Input: n = 2
-Output: 1
-Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+Output:
+- nth Fibonacci number
+- Example: 3 (as F(4) = F(3) + F(2) = 2 + 1 = 3)
 
-Example 2:
-Input: n = 3
-Output: 2
-Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+Constraints:
+- 0 <= n <= 30
+- Answer guaranteed to fit in 32-bit integer
 
-Example 3:
-Input: n = 4
-Output: 3
-Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+Approaches:
+1. Iterative (Optimal)
+   - Use two variables for previous numbers
+   - Build up to nth number
+   Time: O(n)
+   Space: O(1)
+
+2. Recursive (Simple but inefficient)
+   - Directly implement F(n) = F(n-1) + F(n-2)
+   - Use base cases F(0) = 0, F(1) = 1
+   Time: O(2^n)
+   Space: O(n) for recursion stack
+
+3. Dynamic Programming (Alternative)
+   - Store previously calculated values
+   - Build up to nth number
+   Time: O(n)
+   Space: O(n)
+
+Time Complexity: O(n) for iterative, O(2^n) for recursive
+Space Complexity: O(1) for iterative, O(n) for recursive
 */
 
 // 1

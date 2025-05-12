@@ -1,4 +1,42 @@
-// Subtract the Product and Sum of Digits of an Integer
+/*
+Title: Subtract the Product and Sum of Digits of an Integer
+
+Problem:
+- Given an integer n
+- Calculate product of its digits
+- Calculate sum of its digits
+- Return difference (product - sum)
+
+Input:
+- Integer n
+- Example: n = 234
+
+Output:
+- Difference between product and sum of digits
+- Example: 15 (as 2*3*4 - (2+3*4) = 24 - 9 = 15)
+
+Constraints:
+- 1 <= n <= 10^5
+- n contains only positive digits
+
+Approaches:
+1. Iterative Digit Extraction
+   - Extract digits using modulo and division
+   - Calculate product and sum simultaneously
+   - Return difference
+   Time: O(log n) - number of digits
+   Space: O(1)
+
+2. String Conversion (Alternative)
+   - Convert to string
+   - Process each character as digit
+   - Calculate product and sum
+   Time: O(log n)
+   Space: O(log n)
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+*/
 
 /*
 Given an integer number n, return the difference between the product of its digits and the sum of its digits.

@@ -1,23 +1,41 @@
-// sqrt(x)
-
 /*
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+Title: Sqrt(x)
 
-You must not use any built-in exponent function or operator.
+Problem:
+- Compute and return square root of x
+- Round down to nearest integer
+- Must not use built-in sqrt functions
 
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
+Input:
+- Non-negative integer x
+- Example: x = 8
 
+Output:
+- Integer square root rounded down
+- Example: 2 (as sqrt(8) = 2.82842...)
 
-Example 1:
+Constraints:
+- 0 <= x <= 2^31 - 1
+- Must return floor of square root
+- No built-in exponential/sqrt functions
 
-Input: x = 4
-Output: 2
-Explanation: The square root of 4 is 2, so we return 2.
-Example 2:
+Approaches:
+1. Binary Search (Optimal)
+   - Search space: 1 to x/2
+   - Check mid*mid against x
+   - Handle overflow using long long
+   Time: O(log x)
+   Space: O(1)
 
-Input: x = 8
-Output: 2
-Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
+2. Newton's Method
+   - Start with x/2
+   - Iteratively improve guess
+   - r = (r + x/r) / 2
+   Time: O(log x)
+   Space: O(1)
+
+Time Complexity: O(log x)
+Space Complexity: O(1)
 */
 
 class Solution

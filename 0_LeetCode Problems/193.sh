@@ -1,24 +1,41 @@
-: '
-193. Valid Phone Numbers
+#!/bin/bash
+# Title: Valid Phone Numbers
+#
+# Problem:
+# - Read file containing phone numbers
+# - Print valid phone numbers only
+# - Valid formats:
+#   * (xxx) xxx-xxxx
+#   * xxx-xxx-xxxx
+#
+# Input:
+# - File 'file.txt' containing phone numbers
+# - Example lines:
+#   987-123-4567
+#   123 456 7890
+#   (123) 456-7890
+#
+# Output:
+# - Valid phone numbers, one per line
+# - Example:
+#   987-123-4567
+#   (123) 456-7890
+#
+# Constraints:
+# - File contains at most 100 lines
+# - Each line contains phone number or invalid text
+#
+# Approaches:
+# 1. Using grep with regex (Optimal)
+#    - Match either format with regex
+#    - Use extended regex for better readability
+#    Time: O(n) where n is number of lines
+#    Space: O(1)
+#
+# 2. Using awk/sed (Alternative)
+#    - Process line by line
+#    - Match against patterns
+#    Time: O(n)
+#    Space: O(1)
 
-Given a text file file.txt that contains a list of phone numbers (one per line), write a one-liner bash script to print all valid phone numbers.
-
-You may assume that a valid phone number must appear in one of the following two formats: (xxx) xxx-xxxx or xxx-xxx-xxxx. (x means a digit)
-
-You may also assume each line in the text file must not contain leading or trailing white spaces.
-
-Example:
-
-Assume that file.txt has the following content:
-
-987-123-4567
-123 456 7890
-(123) 456-7890
-Your script should output the following valid phone numbers:
-
-987-123-4567
-(123) 456-7890
-'
-
-
-grep - E '^(\([0-9]{3}\) [0-9]{3}-[0-9]{4}$|^[0-9]{3}-[0-9]{3}-[0-9]{4})$' file.txt
+grep -E '^(\([0-9]{3}\) [0-9]{3}-[0-9]{4}$|^[0-9]{3}-[0-9]{3}-[0-9]{4})$' file.txt

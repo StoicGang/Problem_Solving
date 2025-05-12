@@ -1,30 +1,45 @@
 /*
-74. Search a 2D Matrix
+Title: Search a 2D Matrix
 
-You are given an m x n integer matrix matrix with the following two properties:
+Problem:
+- Search for target value in m x n matrix
+- Matrix has special properties:
+  * Each row is sorted in ascending order
+  * First element of each row is greater than last element of previous row
 
-Each row is sorted in non-decreasing order.
-The first integer of each row is greater than the last integer of the previous row.
-Given an integer target, return true if target is in matrix or false otherwise.
+Input:
+- m x n matrix with sorted properties
+- Target integer to find
+- Example: matrix = [[1,3,5,7],[10,11,16,20]], target = 3
 
-You must write a solution in O(log(m * n)) time complexity.
-
-
-Example 1:
-Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
-Output: true
-
-Example 2:
-Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
-Output: false
-
+Output:
+- Boolean indicating if target exists in matrix
+- Example: true
 
 Constraints:
+- m == matrix.length
+- n == matrix[i].length
+- 1 <= m, n <= 100
+- -10^4 <= matrix[i][j], target <= 10^4
+- Matrix is sorted row-wise and column-wise
+- Must achieve O(log(m * n)) complexity
 
-m == matrix.length
-n == matrix[i].length
-1 <= m, n <= 100
--104 <= matrix[i][j], target <= 104
+Approaches:
+1. Binary Search on Flattened Matrix (Optimal)
+   - Treat 2D matrix as 1D sorted array
+   - Convert mid index to row/col coordinates
+   - Apply binary search
+   Time: O(log(m*n))
+   Space: O(1)
+
+2. Two Binary Searches
+   - Binary search for row
+   - Binary search in found row
+   Time: O(log m + log n)
+   Space: O(1)
+
+Time Complexity: O(log(m*n))
+Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>

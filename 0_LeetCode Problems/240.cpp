@@ -1,30 +1,45 @@
 /*
-240. Search a 2D Matrix II
+Title: Search a 2D Matrix II
 
-Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:
+Problem:
+- Search for target value in 2D matrix
+- Each row sorted left to right
+- Each column sorted top to bottom
+- Return true if target found
 
-Integers in each row are sorted in ascending from left to right.
-Integers in each column are sorted in ascending from top to bottom.
+Input:
+- m x n integer matrix
+- Target integer to find
+- Example: matrix = [[1,4,7,11,15],[2,5,8,12,19],...], target = 5
 
-
-Example 1:
-Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
-Output: true
-
-Example 2:
-Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
-Output: false
-
+Output:
+- Boolean indicating if target exists in matrix
+- Example: true
 
 Constraints:
+- m == matrix.length
+- n == matrix[i].length
+- 1 <= n, m <= 300
+- -10^9 <= matrix[i][j] <= 10^9
+- All row elements sorted ascending
+- All column elements sorted ascending
+- -10^9 <= target <= 10^9
 
-m == matrix.length
-n == matrix[i].length
-1 <= n, m <= 300
--109 <= matrix[i][j] <= 109
-All the integers in each row are sorted in ascending order.
-All the integers in each column are sorted in ascending order.
--109 <= target <= 109
+Approaches:
+1. Start from Top-Right (Optimal)
+   - Begin from top-right corner
+   - If target smaller, move left
+   - If target larger, move down
+   Time: O(m + n)
+   Space: O(1)
+
+2. Binary Search Each Row
+   - Apply binary search on each row
+   Time: O(m log n)
+   Space: O(1)
+
+Time Complexity: O(m + n)
+Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>

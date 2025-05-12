@@ -1,40 +1,40 @@
 /*
-Title: LeetCode 1009 - Complement of Base 10 Integer
-Problem: Find the complement of a positive integer in base 10.
-The complement is the number you get when you flip all bits in its binary representation.
+Title: Complement of Base 10 Integer
+
+Problem:
+- Find complement of base 10 integer
+- Flip all bits in binary representation
+- Ignore leading zeros in binary form
 
 Input:
-- Integer n (0 ≤ n ≤ 10^9)
+- Non-negative integer n
+- Example: n = 5 (binary: 101)
 
 Output:
-- Complement of n (flip all bits in binary representation)
+- Complement of input number
+- Example: 2 (binary: 010)
 
 Constraints:
-- 0 ≤ n ≤ 10^9
-- Input does not contain leading zeros
+- 0 <= n <= 10^9
+- Must handle edge case of n = 0
 
 Approaches:
-1. Bit Manipulation (Current Implementation):
-   - Find number of bits in input
-   - Create mask with all 1s of that length
+1. Bit Manipulation (Optimal)
+   - Create mask with same number of bits
    - XOR with original number
-   - Time: O(log n) - number of bits
-   - Space: O(1)
+   - Handle edge case of n = 0
+   Time: O(log n)
+   Space: O(1)
 
-2. Binary String Method (Alternative):
+2. String Conversion
    - Convert to binary string
    - Flip each bit
-   - Convert back to integer
-   - Time: O(log n)
-   - Space: O(log n)
+   - Convert back to decimal
+   Time: O(log n)
+   Space: O(log n)
 
-Example:
-Input: 5
-Output: 2
-Explanation:
-5 in binary is 101
-Complement is   010
-010 in decimal is 2
+Time Complexity: O(log n)
+Space Complexity: O(1)
 */
 
 class Solution

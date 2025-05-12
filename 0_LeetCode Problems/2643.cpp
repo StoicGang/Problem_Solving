@@ -1,32 +1,36 @@
 /*
-2643. Row With Maximum Ones
+Title: Row With Maximum Ones
 
-Given a m x n binary matrix mat, find the 0-indexed position of the row that contains the maximum count of ones, and the number of ones in that row.
-In case there are multiple rows that have the maximum count of ones, the row with the smallest row number should be selected.
-Return an array containing the index of the row, and the number of ones in it.
+Problem:
+- Given a m x n binary matrix mat
+- Find the 0-indexed position of row with maximum ones
+- If multiple rows have same count, select smallest row number
+- Return array containing [row_index, count_of_ones]
 
-Example 1:
-Input: mat = [[0,1],[1,0]]
-Output: [0,1]
-Explanation: Both rows have the same number of 1's. So we return the index of the smaller row, 0, and the maximum count of ones (1). So, the answer is [0,1].
+Input:
+- Binary matrix mat[m][n] where elements are 0 or 1
+- Example: [[0,1],[1,0]]
 
-Example 2:
-Input: mat = [[0,0,0],[0,1,1]]
-Output: [1,2]
-Explanation: The row indexed 1 has the maximum count of ones (2). So we return its index, 1, and the count. So, the answer is [1,2].
-
-Example 3:
-Input: mat = [[0,0],[1,1],[0,0]]
-Output: [1,2]
-Explanation: The row indexed 1 has the maximum count of ones (2). So the answer is [1,2].
-
+Output:
+- Vector of 2 integers [row_index, count_of_ones]
+- Example: [0,1]
 
 Constraints:
+- m == mat.length
+- n == mat[i].length
+- 1 <= m, n <= 100
+- mat[i][j] is either 0 or 1
 
-m == mat.length
-n == mat[i].length
-1 <= m, n <= 100
-mat[i][j] is either 0 or 1.
+Approach:
+1. Initialize maxCount = 0 and rowIndex = 0
+2. Iterate through each row (i = 0 to m-1)
+   - Count ones in current row
+   - If count equals maxCount, take minimum row index
+   - If count greater than maxCount, update maxCount and rowIndex
+3. Return vector containing [rowIndex, maxCount]
+
+Time Complexity: O(m*n) where m = rows, n = columns
+Space Complexity: O(1) excluding output array
 */
 
 #include <bits/stdc++.h>

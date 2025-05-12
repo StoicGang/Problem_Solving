@@ -1,29 +1,39 @@
 /*
-704. Binary Search
+Title: Binary Search
 
-Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+Problem:
+- Given a sorted array and target value
+- Find the index of target in the array
+- Return -1 if target does not exist
 
-You must write an algorithm with O(log n) runtime complexity.
+Input:
+- Sorted integer array nums
+- Target integer to find
+- Example: nums = [-1,0,3,5,9,12], target = 9
 
-
-
-Example 1:
-Input: nums = [-1,0,3,5,9,12], target = 9
-Output: 4
-Explanation: 9 exists in nums and its index is 4
-
-Example 2:
-Input: nums = [-1,0,3,5,9,12], target = 2
-Output: -1
-Explanation: 2 does not exist in nums so return -1
-
+Output:
+- Index of target if found, -1 if not found
+- Example: 4 (for the above input)
 
 Constraints:
+- 1 <= nums.length <= 10^4
+- -10^4 < nums[i], target < 10^4
+- All integers in nums are unique
+- nums is sorted in ascending order
+- Must achieve O(log n) runtime complexity
 
-1 <= nums.length <= 104
--104 < nums[i], target < 104
-All the integers in nums are unique.
-nums is sorted in ascending order.
+Approach:
+1. Use binary search algorithm
+   - Initialize start = 0, end = length-1
+   - While start <= end:
+     * Calculate mid = start + (end-start)/2
+     * If target found at mid, return mid
+     * If target > mid element, search right half
+     * If target < mid element, search left half
+   - Return -1 if not found
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>

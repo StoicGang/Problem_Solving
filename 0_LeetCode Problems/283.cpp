@@ -1,28 +1,35 @@
 /*
-283. Move Zeroes
+Title: Move Zeroes
 
-Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Problem:
+- Move all zeroes to end of array
+- Maintain relative order of non-zero elements
+- Must modify array in-place
 
-Note that you must do this in-place without making a copy of the array.
- 
-Example 1:
-Input: nums = [0,1,0,3,12]
-Output: [1,3,12,0,0]
+Input:
+- Integer array nums
+- Example: [0,1,0,3,12]
 
-Example 2:
-
-Input: nums = [0]
-Output: [0]
- 
+Output:
+- Same array with zeroes moved to end
+- Example: [1,3,12,0,0]
 
 Constraints:
+- 1 <= nums.length <= 10^4
+- -2^31 <= nums[i] <= 2^31 - 1
+- Must do in-place without making copy
+- Minimize operations
 
-1 <= nums.length <= 104
--231 <= nums[i] <= 231 - 1
- 
+Approach:
+1. Two-pointer technique
+   - Keep track of position for non-zero element
+   - Move non-zero elements to front
+   - Fill remaining positions with zeroes
+   - Maintain relative order of non-zero elements
+
+Time Complexity: O(n)
+Space Complexity: O(1)
 */
-
-
 
 #include <bits/stdc++.h>
 using namespace std;

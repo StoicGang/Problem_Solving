@@ -1,21 +1,37 @@
 /*
-345. Reverse Vowels of a String
+Title: Reverse Vowels of a String
 
-Given a string s, reverse only all the vowels in the string and return it.
-The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+Problem:
+- Reverse only the vowels in a given string
+- Keep all other characters in their original positions
+- Vowels are 'a', 'e', 'i', 'o', 'u' (case insensitive)
 
+Input:
+- String s containing ASCII characters
+- Example: "hello", "leetcode"
 
-Example 1:
-Input: s = "IceCreAm"
-Output: "AceCreIm"
+Output:
+- String with vowels reversed, other chars unchanged
+- Example: "holle", "leotcede"
 
-Explanation:
-The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+Constraints:
+- 1 <= s.length <= 3 * 10^5
+- s consists of printable ASCII characters
+- Must handle both uppercase and lowercase vowels
 
-Example 2:
-Input: s = "leetcode"
-Output: "leotcede"
+Approach:
+1. Two-pointer technique with vowel check
+   - Initialize start = 0, end = length-1
+   - While start < end:
+     * Skip non-vowels from both ends
+     * When both vowels found, swap them
+     * Move pointers towards center
+   - Check both upper and lowercase vowels
+
+Time Complexity: O(n)
+Space Complexity: O(1)
 */
+
 #include <bits/stdc++.h>
 
 class Solution

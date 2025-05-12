@@ -1,33 +1,34 @@
 /*
-2469. Convert the Temperature
+Title: Convert the Temperature
 
-You are given a non-negative floating point number rounded to two decimal places celsius, that denotes the temperature in Celsius.
+Problem:
+- Convert Celsius temperature to Kelvin and Fahrenheit
+- Return both conversions in an array
+- Handle decimal precision
 
-You should convert Celsius into Kelvin and Fahrenheit and return it as an array ans = [kelvin, fahrenheit].
+Input:
+- Float celsius (temperature in Celsius)
+- Example: celsius = 36.50
 
-Return the array ans. Answers within 10-5 of the actual answer will be accepted.
-
-Note that:
-
-Kelvin = Celsius + 273.15
-Fahrenheit = Celsius * 1.80 + 32.00
-
-
-Example 1:
-
-Input: celsius = 36.50
-Output: [309.65000,97.70000]
-Explanation: Temperature at 36.50 Celsius converted in Kelvin is 309.65 and converted in Fahrenheit is 97.70.
-Example 2:
-
-Input: celsius = 122.11
-Output: [395.26000,251.79800]
-Explanation: Temperature at 122.11 Celsius converted in Kelvin is 395.26 and converted in Fahrenheit is 251.798.
-
+Output:
+- Vector of two floats [kelvin, fahrenheit]
+- Example: [309.65000, 97.70000]
 
 Constraints:
+- 0 <= celsius <= 1000
+- Answers within 10^-5 of actual answer accepted
+- Kelvin = Celsius + 273.15
+- Fahrenheit = Celsius * 1.80 + 32.00
 
-0 <= celsius <= 1000
+Approach:
+1. Direct Formula Application
+   - Calculate Kelvin: celsius + 273.15
+   - Calculate Fahrenheit: celsius * 1.80 + 32.00
+   - Return both values in vector
+   - Use double for precision
+
+Time Complexity: O(1)
+Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>

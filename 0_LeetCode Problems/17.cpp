@@ -1,46 +1,42 @@
 /*
-17. Letter Combinations of a Phone Number
+Title: Letter Combinations of a Phone Number
 
 Problem:
-    Given a string of digits from 2-9, generate all possible letter combinations that the number
-    could represent on a phone keypad, similar to old phone buttons where each number maps to
-    multiple letters.
+- Given string of digits from 2-9
+- Return all possible letter combinations
+- Each digit maps to letters like phone keypad
+- Return combinations in any order
 
 Input:
-    - digits: string containing digits from 2-9
-    - digits can be empty
-    - 0 <= digits.length <= 4
+- String containing digits 2-9
+- Example: "23"
 
 Output:
-    - Vector of strings containing all possible letter combinations
-    - Empty vector if input string is empty
+- Vector of all possible letter combinations
+- Example: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 
-Example:
-    Input: "23"
-    Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+Constraints:
+- 0 <= digits.length <= 4
+- digits[i] is a digit in range ['2','9']
+- Mapping: 2->abc, 3->def, 4->ghi, 5->jkl,
+          6->mno, 7->pqrs, 8->tuv, 9->wxyz
 
-    Input: ""
-    Output: []
+Approaches:
+1. Backtracking (DFS)
+   - Map digits to letters
+   - Generate combinations recursively
+   - Build string by choosing one letter per digit
+   Time: O(4^n) where n is digits length
+   Space: O(n) for recursion stack
 
-    Input: "2"
-    Output: ["a","b","c"]
+2. Iterative Solution
+   - Start with empty string
+   - For each digit, append each possible letter
+   Time: O(4^n)
+   Space: O(1) excluding output
 
-Approach:
-    1. Create a mapping of digits to their corresponding letters
-    2. Use recursive backtracking to generate all combinations:
-        - For each digit, try all possible letters it maps to
-        - Add each letter to current combination
-        - Recursively process remaining digits
-        - Backtrack by removing last added letter
-    3. Base case: when all digits are processed, add current combination to result
-
-Time Complexity: O(4^n), where n is the length of input string
-    - Each digit can map to 3-4 letters
-    - We try all possibilities for each digit position
-
-Space Complexity: O(n), where n is the length of input string
-    - Recursive call stack depth equals input length
-    - Not counting space needed for output array
+Time Complexity: O(4^n)
+Space Complexity: O(n) for recursion stack
 */
 
 #include <bits/stdc++.h>

@@ -1,36 +1,44 @@
 /*
-33. Search in Rotated Sorted Array
+Title: Search in Rotated Sorted Array
 
-There is an integer array nums sorted in ascending order (with distinct values).
+Problem:
+- Search for target value in rotated sorted array
+- Array was sorted but rotated at unknown pivot
+- Must achieve O(log n) runtime complexity
 
-Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k
-(1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+Input:
+- Integer array nums (rotated at some pivot)
+- Target integer to find
+- Example: nums = [4,5,6,7,0,1,2], target = 0
 
-Given the array nums after the possible rotation and an integer target, return the index of target if it
-is in nums, or -1 if it is not in nums.
-
-You must write an algorithm with O(log n) runtime complexity.
-
-
-Example 1:
-Input: nums = [4,5,6,7,0,1,2], target = 0
-Output: 4
-
-Example 2:
-Input: nums = [4,5,6,7,0,1,2], target = 3
-Output: -1
-
-Example 3:
-Input: nums = [1], target = 0
-Output: -1
-
+Output:
+- Index of target if found, -1 if not found
+- Example: 4 (as 0 is at index 4)
 
 Constraints:
-1 <= nums.length <= 5000
--104 <= nums[i] <= 104
-All values of nums are unique.
-nums is an ascending array that is possibly rotated.
--104 <= target <= 104
+- 1 <= nums.length <= 5000
+- -10^4 <= nums[i] <= 10^4
+- All values unique
+- -10^4 <= target <= 10^4
+- Array was originally sorted in ascending order
+
+Approaches:
+1. Modified Binary Search
+   - Find pivot point first
+   - Determine which half to search
+   - Apply binary search on chosen half
+   Time: O(log n)
+   Space: O(1)
+
+2. Single Pass Binary Search
+   - Compare with middle element
+   - Check which half is sorted
+   - Determine if target lies in sorted half
+   Time: O(log n)
+   Space: O(1)
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
 */
 
 // linear search

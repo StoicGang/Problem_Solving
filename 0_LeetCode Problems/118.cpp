@@ -1,19 +1,35 @@
 /*
-118. Pascal's Triangle
+Title: Pascal's Triangle
 
-Given an integer numRows, return the first numRows of Pascal's triangle.
+Problem:
+- Generate first numRows of Pascal's triangle
+- Each number is sum of two numbers directly above it
 
-In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+Input:
+- Integer numRows (number of rows to generate)
+- Example: numRows = 5
 
-Example 1:
+Output:
+- Vector of vectors representing Pascal's triangle
+- Example: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
 
-Input: numRows = 5
-Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
-Example 2:
+Constraints:
+- 1 <= numRows <= 30
+- Each row starts and ends with 1
+- Each number is sum of two numbers above it
 
-Input: numRows = 1
-Output: [[1]]
+Approach:
+1. Build triangle row by row
+   - First and last elements of each row are 1
+   - For middle elements (j from 1 to i-1):
+     * Calculate as sum of elements from row above
+     * val[i][j] = val[i-1][j-1] + val[i-1][j]
+   - Add each completed row to result
+
+Time Complexity: O(numRows^2)
+Space Complexity: O(numRows^2) for result array
 */
+
 #include <bits/stdc++.h>
 
 using namespace std;

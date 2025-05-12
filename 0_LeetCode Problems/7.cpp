@@ -1,33 +1,39 @@
 /*
-Problem: Reverse Integer
-- Given a signed 32-bit integer, reverse its digits.
-- Return 0 if result overflows 32-bit integer range [-2^31, 2^31 - 1]
+Title: Reverse Integer
+
+Problem:
+- Given a signed 32-bit integer
+- Reverse its digits
+- Return 0 if reversed number overflows 32-bit integer range
+
+Input:
+- Signed 32-bit integer x
+- Example: 123, -123, 120
+
+Output:
+- Integer with digits reversed
+- 0 if result overflows
+- Example: 321, -321, 21
+
+Constraints:
+- -2^31 <= x <= 2^31 - 1
 - Cannot use 64-bit integers
-
-Input: Signed 32-bit integer x
-Output: Integer with digits reversed, or 0 if overflow
-
-Examples:
-1. Input: x = 123
-    Output: 321
-2. Input: x = -123
-    Output: -321
-3. Input: x = 120
-    Output: 21
+- Must handle overflow cases
 
 Approaches:
-1. Mathematical approach:
-    - Extract digits using modulo
-    - Build reversed number while checking overflow
-    Time Complexity: O(log x) where x is input number
-    Space Complexity: O(1)
+1. Mathematical Approach
+   - Extract digits using modulo
+   - Build reversed number while checking overflow
+   - Handle negative numbers separately
+   Time Complexity: O(log|x|) - number of digits
+   Space Complexity: O(1)
 
-2. String conversion:
-    - Convert to string
-    - Reverse string handling negative sign
-    - Convert back checking overflow
-    Time Complexity: O(log x) where x is input number
-    Space Complexity: O(log x) for string storage
+2. String Conversion (Alternative)
+   - Convert to string, handle sign
+   - Reverse string
+   - Convert back to integer, check overflow
+   Time Complexity: O(log|x|)
+   Space Complexity: O(log|x|)
 */
 
 #include <bits/stdc++.h>

@@ -1,7 +1,7 @@
-//Binary conversion 
+// Binary conversion
 
 /*
-Given a positive integer n, write a function that returns the number of 
+Given a positive integer n, write a function that returns the number of
 set bits in its binary representation (also known as the Hamming weight).
 
 Example 1:
@@ -26,17 +26,21 @@ Explanation:
 The input binary string 1111111111111111111111111111101 has a total of thirty set bits.
 */
 
-class Solution {
+class Solution
+{
 public:
-    int hammingWeight(int n) {
+    int hammingWeight(int n)
+    {
         int count{0};
-        while(n!=0){
-            //checking last bit 
-            if(n&1){
+        while (n != 0)
+        {
+            // checking last bit
+            if (n & 1)
+            {
                 count++;
             }
-            n= n>>1;
+            n = n >> 1;
         }
-        return count ;
+        return count;
     }
 };

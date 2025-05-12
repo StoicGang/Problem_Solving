@@ -1,23 +1,36 @@
 /*
-54. Spiral Matrix
+Title: Spiral Matrix
 
-Given an m x n matrix, return all elements of the matrix in spiral order.
+Problem:
+- Given an m x n matrix
+- Return all elements of the matrix in spiral order
+- Traverse the matrix in clockwise spiral pattern
 
-Example 1:
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-Output: [1,2,3,6,9,8,7,4,5]
+Input:
+- m x n matrix of integers
+- Example: [[1,2,3],[4,5,6],[7,8,9]]
 
-Example 2:
-Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-Output: [1,2,3,4,8,12,11,10,9,5,6,7]
-
+Output:
+- Vector containing elements in spiral order
+- Example: [1,2,3,6,9,8,7,4,5]
 
 Constraints:
+- m == matrix.length
+- n == matrix[i].length
+- 1 <= m, n <= 10
+- -100 <= matrix[i][j] <= 100
 
-m == matrix.length
-n == matrix[i].length
-1 <= m, n <= 10
--100 <= matrix[i][j] <= 100
+Approach:
+1. Initialize 4 boundaries: startRow, endRow, startCol, endCol
+2. While elements remain unvisited:
+   - Traverse right (startRow, startCol to endCol)
+   - Traverse down (startRow+1 to endRow, endCol)
+   - Traverse left (endRow, endCol-1 to startCol)
+   - Traverse up (endRow-1 to startRow+1, startCol)
+3. Update boundaries after each complete spiral
+
+Time Complexity: O(m*n) where m,n are dimensions
+Space Complexity: O(1) excluding output array
 */
 
 #include <bits/stdc++.h>

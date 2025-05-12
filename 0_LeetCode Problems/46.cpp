@@ -1,27 +1,34 @@
 /*
-46. Permutations
-Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+Title: Permutations
 
+Problem:
+- Given an array of distinct integers
+- Return all possible permutations in any order
 
-Example 1:
-Input: nums = [1,2,3]
-Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+Input:
+- Array nums containing distinct integers
+- Example: [1,2,3]
 
-Example 2:
-Input: nums = [0,1]
-Output: [[0,1],[1,0]]
-
-Example 3:
-Input: nums = [1]
-Output: [[1]]
-
+Output:
+- Vector of all possible permutations
+- Example: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
 Constraints:
+- 1 <= nums.length <= 6
+- -10 <= nums[i] <= 10
+- All integers in nums are unique
 
-1 <= nums.length <= 6
--10 <= nums[i] <= 10
-All the integers of nums are unique.
+Approach:
+1. Use backtracking with recursion
+   - Start with first index and swap with each element
+   - Recursively generate permutations for remaining elements
+   - Backtrack by swapping back elements
+2. Store each valid permutation in result vector
+
+Time Complexity: O(n!)
+Space Complexity: O(n) for recursion stack
 */
+
 #include <bits/stdc++.h>
 using namespace std;
 

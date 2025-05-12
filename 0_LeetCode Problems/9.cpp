@@ -1,50 +1,50 @@
 /*
-Problem: 9. Palindrome Number
------------------------------------------
-Given an integer x, determine if it is a palindrome number.
-A palindrome number reads the same forwards and backwards.
+Title: Palindrome Number
+
+Problem:
+- Determine if integer is palindrome
+- Number is palindrome if reads same forward and backward
+- Solve without converting to string
 
 Input:
-- x (int): An integer value
-- Constraints: -2^31 <= x <= 2^31 - 1
+- Integer x
+- Example: 121, -121, 10
 
 Output:
-- Returns true if x is a palindrome number
-- Returns false otherwise
+- Boolean indicating if x is palindrome
+- Example: true, false, false
+
+Constraints:
+- -2^31 <= x <= 2^31 - 1
+- Should handle negative numbers
+- Should not convert to string
 
 Approaches:
-1. String Conversion Method (Current Implementation)
-    - Convert integer to string
-    - Use two pointers (start and end) to compare characters
-    - Move pointers towards center while comparing
-    Time Complexity: O(log x) - converting to string and comparing digits
-    Space Complexity: O(log x) - storing digits in string
+1. Reverse Half Number (Optimal)
+   - Reverse second half of number
+   - Compare with first half
+   - Handle middle digit for odd length
+   Time: O(log x)
+   Space: O(1)
 
-2. Mathematical Approach (Implemented)
-    - Reverse half of the number
-    - Compare original number with reversed half
-    - Special handling for negative numbers and numbers ending with 0
-    - More memory efficient as it avoids string conversion
-    Time Complexity: O(log x) - need to process each digit
-    Space Complexity: O(1) - only using constant extra space
+2. Full Reversal
+   - Reverse entire number
+   - Compare with original
+   Time: O(log x)
+   Space: O(1)
+
+3. String Conversion (Not Allowed)
+   - Convert to string
+   - Check palindrome property
+   Time: O(log x)
+   Space: O(log x)
+
+Time Complexity: O(log x)
+Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>
 using namespace std;
-
-bool isPalindrome(int x)
-{
-    string str = to_string(x);
-    int start = 0, end = str.length() - 1;
-    while (start < end)
-    {
-        if (str[start++] != str[end--])
-        {
-            return false;
-        }
-    }
-    return true;
-}
 
 bool isPalindrome(int x)
 {
