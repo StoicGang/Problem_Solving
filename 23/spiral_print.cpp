@@ -63,12 +63,61 @@ void print(int arr[][3], int row, int col)
     }
 }
 
+vector<int> spiralMatrix(vector<vector<int>> &MATRIX)
+{
+    int m = MATRIX.size() - 1;    // row
+    int n = MATRIX[0].size() - 1; // col
+    int row = 0;
+    int col = 0;
+    vector<int> temp;
+    while (row <= m && col <= n)
+    {
+        // first line
+        for (int i = col; i <= n; i++)
+        {
+            temp.push_back(MATRIX[row][i]);
+        }
+        row++;
+        // last col
+        for (int i = row; i <= m; i++)
+        {
+            temp.push_back(MATRIX[i][n]);
+        }
+        n--;
+        // last row
+        if (row <= m)
+        {
+            for (int i = n; i >= col; i--)
+            {
+                temp.push_back(MATRIX[m][i]);
+            }
+            m--;
+        }
+        // first col
+        if (col <= n)
+        {
+            for (int i = m; i >= row; i--)
+            {
+                temp.push_back(MATRIX[i][col]);
+            }
+            col++;
+        }
+    }
+    return temp;
+}
+
 int main()
 {
-    int arr[3][3]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "Array is : " << endl;
-    print(arr, 3, 3);
-    cout << "Spiral print is : " << endl;
-    spiral_print(arr, 3, 3);
+    // int arr[3][3]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    // cout << "Array is : " << endl;
+    // print(arr, 3, 3);
+    // cout << "Spiral print is : " << endl;
+    // spiral_print(arr, 3, 3);
+    vector<vector<int>> matrix = {{1, 2, 3, 0}, {4, 5, 6, 10}, {7, 8, 9, 11}};
+    vector<int> result = spiralMatrix(matrix);
+    for (int i = 0; i < result.size(); i++)
+    {
+        cout << result[i] << " ";
+    }
     return 0;
 }
