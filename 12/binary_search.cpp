@@ -44,9 +44,11 @@ Output: 3 (index where 6 is found)
 // to find a word by halving the pages until you pinpoint it.
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
-int binary_search(int arr[], int n, int key)
+int binary_search1(int arr[], int n, int key)
 {
     int left{0};
     int right{n - 1};
@@ -124,7 +126,31 @@ int main()
 
     cout << "Enter the element you want to search : ";
     cin >> key;
-    // cout << binary_search(arr, size, key);
-    cout << "Element is present at : " << RBinary(arr, 0, size - 1, key);
+    // // cout << binary_search1(arr, size, key);
+    // cout << "Element is present at : " << RBinary(arr, 0, size - 1, key);
+
+    // predefined functions for binary search (in arr)
+    sort(arr, arr + size); // Sort the array first
+    if (binary_search(arr, arr + size, key))
+    {
+        cout << "Found";
+    }
+    else
+    {
+        cout << "Not Found";
+    }
+
+    // predefined function for binary search (in vector)
+    // vector<int> vec{1, 2, 3, 7, 4, 3, 2, 9, 10};
+    // sort(vec.begin(), vec.end()); // Sort the vector first
+    // if (binary_search(vec.begin(), vec.end(), 3))
+    // {
+    //     cout << "\nFound";
+    // }
+    // else
+    // {
+    //     cout << "\nNot found";
+    // }
+
     return 0;
 }

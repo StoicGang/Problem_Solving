@@ -53,6 +53,15 @@ void printArray(int arr[], int n)
     cout << endl;
 }
 
+void printVec(vector<int> &arr)
+{
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     int arr[5]{4, 2, 5, 3, 6};
@@ -61,4 +70,11 @@ int main()
     sort(arr, arr + 5);
     cout << "After Sorting ";
     printArray(arr, 5);
+    vector<int> arr2 = {1, 9, 2, 3, 0, 8, 4, 5, 6, 7};
+    cout << "Before Sorting ";
+    printVec(arr2);
+    sort(arr2.begin(), arr2.end());
+    cout << "After Sorting ";
+    printVec(arr2);
+    return 0;
 }
