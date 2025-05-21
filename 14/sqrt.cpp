@@ -8,6 +8,7 @@ long long int sqrtInteger(int n)
     while (start <= end)
     {
         long long int square = mid * mid;
+        long long int mid = start + (end - start) / 2;
         if (square == n)
         {
             return mid;
@@ -21,7 +22,6 @@ long long int sqrtInteger(int n)
         {
             end = mid - 1;
         }
-        mid = start + (end - start) / 2;
     }
     return ans;
 }
@@ -33,7 +33,7 @@ double afterDecimal(int n, int precision, int temp_solution)
     for (int i = 0; i < precision; i++)
     {
         factor = factor / 10;
-        for (double j = ans; j * j <= n; j = j + factor)
+        for (double j = ans; j * j <= n; j = j + factor) // this will generate the precision upto 6 digits
         {
             ans = j;
         }
@@ -47,7 +47,9 @@ int main()
     cout << "enter the number : ";
     cin >> n;
     int temp_solution = sqrtInteger(n);
-    cout << "The square root is : " << afterDecimal(n, 3, temp_solution);
+    int precision = 0;
+    cin >> precision;
+    cout << "The square root is : " << afterDecimal(n, precision, temp_solution);
 
     return 0;
 }

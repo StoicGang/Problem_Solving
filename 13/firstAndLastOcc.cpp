@@ -1,3 +1,5 @@
+#include <vector>
+#include <algorithm>
 #include <iostream>
 using namespace std;
 
@@ -102,8 +104,22 @@ int lastR(int arr[], int s, int e, int key)
 int main()
 {
     int arr[5] = {10, 20, 20, 20, 30};
+    // int first = firstR(arr, 0, 4, 20);
+    // int second = lastR(arr, 0, 4, 20);
+    // cout << "First & Last occurence of 20 are " << first << " " << second;
     int first = firstR(arr, 0, 4, 20);
     int second = lastR(arr, 0, 4, 20);
-    cout << "First & Last occurence of 20 are " << first << " " << second;
+    cout << "Total no of occurence : " << second - first + 1;
+    // Standard Template library
+    // int target = 0;
+    // vector<int> v{1, 2, 3, 4, 5, 6, 7, 5, 9, 5};
+    // cout << "Target : ";
+    // cin >> target;
+    // std::vector<int>::iterator low, up;
+    // low = std::lower_bound(v.begin(), v.end(), target);
+    // up = std::upper_bound(v.begin(), v.end(), target);
+
+    // std::cout << "lower_bound at position " << (low - v.begin()) << '\n';
+    // std::cout << "upper_bound at position " << (up - v.begin()) << '\n';
     return 0;
 }

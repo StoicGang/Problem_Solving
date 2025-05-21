@@ -1,3 +1,44 @@
+/*
+Title: Binary Search with Lower and Upper Bounds
+Problem: Find element presence and its bounds in a sorted array.
+
+Input: Array size N, N integers, Q queries, Q integers for search
+
+Output: For each query: YES/NO + lower_bound + upper_bound
+
+Bounds Explanation:
+- Lower Bound: Smallest element >= X in sorted array
+    Formula: First occurrence of element >= X
+- Upper Bound: Smallest element > X in sorted array
+    Formula: First occurrence of element > X
+
+Example:
+Array: [1, 2, 2, 3, 3, 4]
+For X = 2:
+- Lower Bound = 2 (first 2)
+- Upper Bound = 3 (first element > 2)
+
+Constraints:
+- 1 <= N <= 10^5
+- -10^9 <= Array elements <= 10^9
+- 1 <= Q <= 10^5
+- -10^9 <= Query values <= 10^9
+
+Approach:
+1. Input array and sort it
+    Time: O(N log N)
+
+2. For each query:
+    a. Binary search to find element
+            Time: O(log N)
+    b. Find lower bound (minimum element >= X)
+            Time: O(log N)
+    c. Find upper bound (minimum element > X)
+            Time: O(log N)
+
+Overall Time Complexity: O(N log N + Q log N)
+Space Complexity: O(N)
+*/
 #include <iostream>
 #include <vector>
 #include <algorithm>
