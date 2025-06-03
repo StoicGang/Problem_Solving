@@ -27,7 +27,7 @@ vector<int> addOneToNumber(vector<int> arr)
 
 int main()
 {
-    vector<int> arr = {1, 2, 9};
+    vector<int> arr = {0, 0, 0, 0, 0, 0};
     vector<int> result = addOneToNumber(arr);
 
     cout << "Result: ";
