@@ -30,8 +30,10 @@ Approaches:
    Space: O(n)
 
 2. Two Pointers (If sorted)
-   - Sort array (track original indices)
-   - Use two pointers from ends
+   - Create vector of pairs to store number and original index
+   - Sort the pairs based on numbers
+   - Use two pointers from both ends
+   - Return original indices when sum equals target
    Time: O(n log n)
    Space: O(n)
 
@@ -46,6 +48,7 @@ Space Complexity: O(n)
 
 // brute force approach
 #include <vector>
+#include <algorithm>
 using namespace std;
 class Solution
 {
@@ -65,5 +68,44 @@ public:
             }
         }
         return temp;
+    }
+};
+
+// modified two pointer appraoch
+class Solution
+{
+public:
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        vector<pair<int, int>> sortedNums;
+
+        for (int i = 0; i < nums.size(); i++)
+        {
+            sortedNums.push_back({nums[i], i});
+        }
+
+        sort(sortedNums.begin(), sortedNums.end());
+
+        int left = 0, right = nums.size() - 1;
+
+        while (left < right)
+        {
+            int sum = sortedNums[left].first + sortedNums[right].first;
+
+            if (sum == target)
+            {
+                return {sortedNums[left].second, sortedNums[right].second};
+            }
+            else if (sum < target)
+            {
+                left++;
+            }
+            else
+            {
+                right--;
+            }
+        }
+
+        return {};
     }
 };
