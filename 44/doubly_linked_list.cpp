@@ -14,6 +14,16 @@ public:
         this->prev = NULL;
         this->next = NULL;
     }
+    ~node()
+    {
+        int val = this->data;
+        if (next != NULL)
+        {
+            delete next;
+            next = NULL;
+        }
+        cout << "Mem free for node : " << val << endl;
+    }
 };
 
 void printList(node *head)
@@ -109,6 +119,37 @@ void InsertAtPosition(node *&tail, node *&head, int position, int d)
     temp->next = nodeToInsert;
     nodeToInsert->prev = temp;
 }
+
+void deleteNode(int position, node *&head)
+{
+    // deleting first node
+    if (position == 1)
+    {
+        node *temp = head;
+        temp->next->prev = NULL;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+    else
+    {
+        // deleting any node other than first node
+        node *curr = head;
+        node *prev = NULL;
+        int cnt = 1;
+        while (cnt < position)
+        {
+            prev = curr;
+            curr = curr->next;
+            cnt++;
+        }
+        curr->prev = NULL;
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+    }
+}
+
 int main()
 {
     node *head = NULL;
@@ -116,14 +157,32 @@ int main()
 
     insertAtHead(head, tail, 12);
     printList(head);
+    cout << "head " << head->data << endl;
+    cout << "tail " << tail->data << endl;
+
     insertAtHead(head, tail, 20);
     printList(head);
+    cout << "head " << head->data << endl;
+    cout << "tail " << tail->data << endl;
+
     insertAtHead(head, tail, 11);
     printList(head);
+    cout << "head " << head->data << endl;
+    cout << "tail " << tail->data << endl;
+
     insertAtTail(head, tail, 56);
     printList(head);
+    cout << "head " << head->data << endl;
+    cout << "tail " << tail->data << endl;
 
     InsertAtPosition(tail, head, 3, 23);
     printList(head);
+    cout << "head " << head->data << endl;
+    cout << "tail " << tail->data << endl;
+
+    deleteNode(3, head);
+    cout << "head " << head->data << endl;
+    cout << "tail " << tail->data << endl;
+
     return 0;
 }
