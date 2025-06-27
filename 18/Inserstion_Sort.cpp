@@ -41,6 +41,19 @@ void Insertion_sort(int arr[], int n)
     }
 }
 
+void Insertion_sort_O(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int j = i;
+        while (j > 0 && arr[j - 1] > arr[j])
+        {
+            swap(arr[j], arr[j - 1]);
+            j--;
+        }
+    }
+}
+
 int main()
 {
     int arr[20]{};
@@ -52,7 +65,7 @@ int main()
     cout << "Array Before Sorting : ";
     printArray(arr, size);
     cout << endl;
-    Insertion_sort(arr, size);
+    Insertion_sort_O(arr, size);
     cout << "Array After sorting : ";
     printArray(arr, size);
 }
