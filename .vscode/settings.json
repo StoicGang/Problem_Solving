@@ -59,6 +59,7 @@
   "files.associations": {
     "iostream": "cpp",
     "ostream": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "functional": "cpp"
   }
 }

@@ -4,7 +4,6 @@ using namespace std;
 // bruteforce approach
 int firstRepeatedB(vector<int> &arr)
 {
-    int ans = -1;
     for (int i = 0; i < arr.size(); i++)
     {
         for (int j = i + 1; j < arr.size(); j++)
@@ -36,6 +35,24 @@ int firstRepeatedO(vector<int> &arr)
     return -1;
 }
 
+// optimal count with unordered_map
+int firstRepeatedUM(vector<int> &arr)
+{
+    unordered_map<int, int> count;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        count[arr[i]]++;
+    }
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (count[arr[i]] > 1)
+        {
+            return i + 1;
+        }
+    }
+    return -1;
+}
+
 int main()
 {
     vector<int> arr = {1, 5, 3, 4, 3, 5, 6};
@@ -44,7 +61,7 @@ int main()
     cout << "First repeating element index (bruteforce): " << firstRepeatedB(arr) << endl;
 
     // Using optimal count approach
-    cout << "First repeating element index (optimal): " << firstRepeatedO(arr) << endl;
+    cout << "First repeating element index (optimal): " << firstRepeatedUM(arr) << endl;
 
     return 0;
 }
