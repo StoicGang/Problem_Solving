@@ -56,7 +56,7 @@ int binary_search1(int arr[], int n, int key)
 
     while (left <= right)
     {
-
+ 
         if (arr[mid] == key)
         {
             return mid;
