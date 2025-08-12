@@ -73,7 +73,7 @@ void insertAtTail(Node *&tail, Node *curr)
 
 Node *approach2(Node *head)
 {
-    // equipments
+    // Dummy heads and tails for 0s, 1s, and 2s
     Node *zerohead = new Node(0);
     Node *zerotail = zerohead;
     Node *onehead = new Node(0);
@@ -81,16 +81,18 @@ Node *approach2(Node *head)
     Node *twohead = new Node(0);
     Node *twotail = twohead;
 
-    // iteration
+    // Traverse original list
     Node *curr = head;
     while (curr != NULL)
     {
-        int value = curr->data;
-        if (value == 0)
+        Node *nextNode = curr->next; // Save next
+        curr->next = NULL;           // Break old link
+
+        if (curr->data == 0)
         {
             insertAtTail(zerotail, curr);
         }
-        else if (value == 1)
+        else if (curr->data == 1)
         {
             insertAtTail(onetail, curr);
         }
@@ -98,18 +100,23 @@ Node *approach2(Node *head)
         {
             insertAtTail(twotail, curr);
         }
-        curr = curr->next;
+
+        curr = nextNode;
     }
 
-    // merging
-    zerotail->next = onehead->next;
+    // Merge the three lists
+    if (onehead->next != NULL)
+        zerotail->next = onehead->next;
+    else
+        zerotail->next = twohead->next;
+
     onetail->next = twohead->next;
     twotail->next = NULL;
 
-    // set head
+    // Final head
     Node *newHead = zerohead->next;
 
-    // delete dummy nodes
+    // Clean up dummy nodes
     delete zerohead;
     delete onehead;
     delete twohead;
