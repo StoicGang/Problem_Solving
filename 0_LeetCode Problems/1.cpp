@@ -42,6 +42,13 @@ Approaches:
    Time: O(n^2)
    Space: O(1)
 
+4. Modified Two Pointers (Sort with indices)
+    - Build vector<pair<int,int>> storing (value, original_index)
+    - Sort the pairs by value to allow two-pointer scanning
+    - Use left and right pointers to find the two values that sum to target
+    - Return the original indices from the stored pairs
+    Time: O(n log n) (sorting)
+    Space: O(n)
 Time Complexity: O(n)
 Space Complexity: O(n)
 */
